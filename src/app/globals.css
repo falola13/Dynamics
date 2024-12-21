@@ -19,3 +19,42 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-color {
+  @apply text-sm text-[#A4b2cb];
+}
+
+/* Hide scrollbar for modern browsers */
+.scrollable-container {
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Custom gradient border */
+.gradient-border {
+  position: relative;
+  padding: 1px; /* Adjust padding as necessary */
+  border-radius: 18px;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: -2px; /* Adjust the offset to match the border width */
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #8089ca, #bac2ff, #9bcae7, #b28bd0);
+  z-index: 1; /* Ensure the gradient border is behind the content */
+}
+
+.gradient-border > * {
+  position: relative;
+  z-index: 2; /* Ensure the content is above the gradient border */
+}
