@@ -35,7 +35,7 @@ const Header = () => (
     <div className="flex items-center gap-4">
       {icons.map((item, index) => {
         return (
-          <button className="" key={index}>
+          <button className="hidden md:block" key={index}>
             {item.icon}
           </button>
         );

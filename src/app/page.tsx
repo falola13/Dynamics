@@ -1,5 +1,6 @@
 import MainContent from "@/components/MainContent";
 import SubHeader from "@/components/subheader";
+import TableSection from "@/components/TableSection";
 
 const Page = () => {
   return (
@@ -227,6 +228,7 @@ const Page = () => {
       <div className="p-3">
         <SubHeader />
         <MainContent />
+        <TableSection />
       </div>
     </div>
   );

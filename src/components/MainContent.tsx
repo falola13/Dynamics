@@ -50,9 +50,9 @@ const MainContent = () => {
   ];
 
   return (
-    <div className="gradient-border shadow-xl">
+    <div className="gradient-border mb-3 shadow-xl">
       <div className="flex flex-col rounded-[16px] border bg-[#efefef] p-3">
-        <div className="mb-8 flex w-full items-center gap-2 text-sm">
+        <div className="mb-8 hidden w-full items-center gap-2 text-sm xl:flex">
           <div className="flex w-full items-center gap-1">
             <Image src="/copilot.webp" width={15} height={15} alt="Copilot" />
             <p className="font-bold">
@@ -103,14 +103,14 @@ const MainContent = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-full gap-2">
-          <div className="w-2/3 border-r pr-4">
+        <div className="flex w-full flex-col gap-2 lg:flex-row">
+          <div className="w-full border-r pr-4 lg:w-2/3">
             <p className="mb-4 text-xs text-gray-600">
               Copilot has pinpointed 20 key leads that show strong purchase
               intent and are actively engaging. These leads need your focus.
             </p>
             {/* Cards */}
-            <div className="flex flex-1 gap-3">
+            <div className="flex flex-1 flex-wrap gap-3 lg:flex-nowrap">
               {CardAr.map((item, index) => (
                 <Card
                   key={index}
@@ -127,7 +127,7 @@ const MainContent = () => {
               ))}
             </div>
           </div>
-          <div className="w-1/3 pl-4">
+          <div className="w-full pl-4 lg:w-1/3">
             <p className="text-xs text-gray-400">Other Key Activities</p>
             <div className="flex flex-col gap-4">
               {cards.map((card, index) => (

@@ -36,6 +36,7 @@ export default function RootLayout({
             <div className="h-full">
               <Sidebar />
             </div>
+
             <main className="scrollable-container flex-1 overflow-y-auto">
               {children}
             </main>

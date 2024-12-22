@@ -26,7 +26,7 @@ const Card = ({
   iconColor,
 }: CardProps) => {
   return (
-    <div className="item-start flex flex-col rounded-md border p-3 shadow">
+    <div className="item-start flex flex-col rounded-md border p-3 shadow-sm">
       <div className="flex items-center gap-4">
         <div className="relative h-7 w-7 rounded-full border">
           <Image
