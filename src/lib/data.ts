@@ -1,10 +1,17 @@
 import { PiHouseLight, PiClock } from "react-icons/pi";
 import { BsPinAngle } from "react-icons/bs";
+import { GiSkills } from "react-icons/gi";
 
 export const home = [
   {
     icon: PiHouseLight,
     title: "Home",
+    href: "/",
+  },
+  {
+    icon: GiSkills,
+    title: "Agent Skill",
+    href: "/agent-skill?modal=true",
   },
   {
     icon: PiClock,

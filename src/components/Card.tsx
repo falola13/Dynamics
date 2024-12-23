@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { IconType } from "react-icons";
 import { PiStarFourFill } from "react-icons/pi";
@@ -12,6 +13,7 @@ type CardProps = {
   footerTxt: string;
   profileIcon: IconType;
   iconColor: string;
+  onClick?: () => void;
 };
 
 const Card = ({
@@ -24,9 +26,13 @@ const Card = ({
   footerTxt,
   profileIcon: ProfileIcon,
   iconColor,
+  onClick,
 }: CardProps) => {
   return (
-    <div className="item-start flex flex-col rounded-md border p-3 shadow-sm">
+    <div
+      className="item-start flex cursor-pointer flex-col rounded-md border p-3 shadow-sm"
+      onClick={onClick}
+    >
       <div className="flex items-center gap-4">
         <div className="relative h-7 w-7 rounded-full border">
           <Image

@@ -181,18 +181,23 @@ const Table: React.FC = () => {
               {/* <td className="border border-gray-300 p-2 text-center">
                 <input type="checkbox" className="text-blue-600" />
               </td> */}
-              <td className="border-y border-gray-300 p-2 text-blue-600">
-                <input type="checkbox" className="mr-2 inline text-blue-600" />
-                {item.name}
+              <td className="border-y border-gray-300 p-2 py-3 text-blue-600">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    className="mr-2 inline text-blue-600"
+                  />
+                  <span className="truncate">{item.name}</span>
+                </div>
               </td>
-              <td className="border-y border-gray-300 p-2 text-gray-500">
-                {item.topic}
+              <td className="border-y border-gray-300 p-2 py-3 text-gray-500">
+                <span className="truncate">{item.topic}</span>
               </td>
-              <td className="border-y border-gray-300 p-2 text-gray-500">
-                {item.status}
+              <td className="border-y border-gray-300 p-2 py-3 text-gray-500">
+                <span className="truncate">{item.status}</span>
               </td>
-              <td className="border-y border-gray-300 p-2 text-gray-500">
-                {item.createdOn}
+              <td className="border-y border-gray-300 p-2 py-3 text-gray-500">
+                <span className="truncate">{item.createdOn}</span>
               </td>
               {/* <td className="border border-gray-300 p-2">
                 <FaEdit className="cursor-pointer text-blue-600" />

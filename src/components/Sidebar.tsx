@@ -13,8 +13,21 @@ import {
   work,
 } from "@/lib/data";
 import { Fragment, useState } from "react";
+import { IconType } from "react-icons";
 
-const MenuLists = [
+interface MenuItem {
+  icon: IconType;
+  title: string;
+  href?: string; // Optional href property
+}
+
+// Define the structure of a menu list
+interface MenuList {
+  title: string;
+  items: MenuItem[];
+}
+
+const MenuLists: MenuList[] = [
   { title: "My Work", items: work },
   { title: "Customers", items: customers },
   { title: "Sales", items: sales },
@@ -28,7 +41,7 @@ const Sidebar = () => {
   const [active, setActive] = useState<string | null>("Leads");
 
   return (
-    <div className="relative h-full">
+    <div className="relative h-full bg-[#f0f0f0]">
       <div className="hidden h-full lg:block">
         {close && (
           <div className="flex h-full w-[200px] flex-col overflow-hidden border-r-2 border-gray-300 bg-[#ECECEC] py-3 shadow-md">
@@ -46,7 +59,11 @@ const Sidebar = () => {
                     items={item.dropdown}
                   />
                 ) : (
-                  <Link key={index} href="#" className="flex gap-4 px-3">
+                  <Link
+                    key={index}
+                    href={item.href || "#"}
+                    className="flex gap-4 px-3"
+                  >
                     <item.icon />
                     <span className={`text-xs`}>{item.title}</span>
                   </Link>
@@ -59,7 +76,7 @@ const Sidebar = () => {
                   {menu.items.map((item, index) => (
                     <Link
                       key={index}
-                      href="#"
+                      href={item.href || "/"}
                       className={`relative flex gap-4 pl-3 pr-3 ${active === item.title ? "w-full bg-[#ffffff] py-2" : ""}`}
                       onClick={() => setActive(item.title)}
                     >
@@ -121,7 +138,11 @@ const Sidebar = () => {
                   items={item.dropdown}
                 />
               ) : (
-                <Link key={index} href="#" className="flex gap-4 px-3">
+                <Link
+                  key={index}
+                  href={item.href || "#"}
+                  className="flex gap-4 px-3"
+                >
                   <item.icon />
                   <span className={`text-xs`}>{item.title}</span>
                 </Link>
@@ -135,7 +156,7 @@ const Sidebar = () => {
                 {menu.items.map((item, index) => (
                   <Link
                     key={index}
-                    href="#"
+                    href={item.href || "/"}
                     className={`relative flex gap-4 pl-3 pr-3 ${active === item.title ? "w-full bg-[#ffffff] py-2" : ""}`}
                     onClick={() => setActive(item.title)}
                   >
