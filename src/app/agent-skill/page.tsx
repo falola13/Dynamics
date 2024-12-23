@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { FaFileAlt } from "react-icons/fa";
 import { FiAlignLeft } from "react-icons/fi";
@@ -202,4 +202,12 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+const App: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Page />
+    </Suspense>
+  );
+};
+
+export default App;
