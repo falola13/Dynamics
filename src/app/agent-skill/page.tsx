@@ -44,7 +44,7 @@ const Page: React.FC = () => {
     if (emailToAdd && !emails.includes(emailToAdd)) {
       setEmails((prevEmails) => [...prevEmails, emailToAdd]);
       setEmail(""); // Clear the input after adding
-      setIsDisabled(true); // Disable button after adding
+      // setIsDisabled(true); // Disable button after adding
     }
   };
 
@@ -185,7 +185,7 @@ const Page: React.FC = () => {
             <button
               disabled={isDisabled}
               onClick={notify}
-              className={`rounded border bg-blue-500 px-3 py-2 text-xs text-white ${isDisabled ? "cursor-not-allowed bg-[#c1c1c1] text-[#9a9a9a]" : "cursor-pointer"}`}
+              className={`rounded border bg-blue-500 px-3 py-2 text-xs text-white ${isDisabled ? "cursor-not-allowed disabled:bg-[#c1c1c1] disabled:text-[#9a9a9a]" : "cursor-pointer"}`}
             >
               Activate
             </button>
